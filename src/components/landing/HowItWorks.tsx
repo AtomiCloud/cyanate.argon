@@ -9,60 +9,65 @@ interface Step {
   color: string;
   iconColor: string;
   iconBg: string;
+  accentBorder: string;
 }
 
 const steps: Step[] = [
   {
     title: 'Send us your website',
-    body: 'Share the URL of your existing website. Our AI-powered scraper crawls every page and extracts all your content, structure, and assets.',
+    body: 'Share your URL. Our AI scraper extracts all your content, pages, and structure — nothing gets lost.',
     details: [
-      'Automatic content extraction — text, images, and page hierarchy',
-      'Schema detection identifies your page types (blog, portfolio, about, etc.)',
-      'Nothing gets lost — every page is catalogued and preserved',
+      'Automatic content extraction — text, images, and hierarchy',
+      'Schema detection identifies your page types',
+      'Currently supports English language content',
     ],
     icon: Globe,
     color: 'from-orange-500/10 to-transparent',
     iconColor: 'text-orange-500',
     iconBg: 'bg-orange-500',
+    accentBorder: 'border-orange-200 dark:border-orange-800/40',
   },
   {
     title: 'Choose your new look',
-    body: 'Find a website whose design you love. Share the URL and we use it as a reference to craft your new look while keeping your brand identity.',
+    body: 'Find any website whose design you love. We use it as a reference to craft your new look.',
     details: [
       'Browse any website for design inspiration',
-      'We extract the design language — layout, typography, colors, spacing',
+      'We extract the design language — layout, typography, colors',
       'Your brand stays yours — we adapt the style, not copy it',
     ],
     icon: Palette,
-    color: 'from-amber-500/10 to-transparent',
-    iconColor: 'text-amber-500',
-    iconBg: 'bg-amber-500',
+    color: 'from-violet-500/10 to-transparent',
+    iconColor: 'text-violet-500',
+    iconBg: 'bg-violet-500',
+    accentBorder: 'border-violet-200 dark:border-violet-800/40',
   },
   {
     title: 'We transform your site',
-    body: 'Our AI engine rebuilds your website with the new design while preserving every piece of content. Our team reviews each page for quality.',
+    body: 'Our AI rebuilds your website with the new design. Our team reviews every page for quality.',
     details: [
       'AI-powered rebuild with human quality review',
-      'Mobile-responsive and SEO-optimized out of the box',
+      'Mobile-responsive and SEO-optimized',
       'Built-in CMS so you can edit content after launch',
     ],
     icon: Wand2,
-    color: 'from-orange-500/10 to-transparent',
-    iconColor: 'text-orange-600',
-    iconBg: 'bg-orange-600',
+    color: 'from-teal-500/10 to-transparent',
+    iconColor: 'text-teal-500',
+    iconBg: 'bg-teal-500',
+    accentBorder: 'border-teal-200 dark:border-teal-800/40',
   },
   {
-    title: 'We host it for you',
-    body: 'Your new website goes live on our fast, reliable infrastructure. We handle deployment, SSL, CDN, and ongoing performance — you just enjoy the results.',
+    title: 'Go live',
+    body: 'Your new website is deployed on fast, global infrastructure. You focus on your business.',
     details: [
-      'Global CDN for fast loading anywhere in the world',
-      'SSL certificate and security handled for you',
-      'Ongoing hosting included — no extra monthly fees',
+      'Global CDN for fast loading anywhere',
+      'SSL certificate and security handled',
+      'Hosting available with monthly plan',
     ],
     icon: Server,
     color: 'from-emerald-500/10 to-transparent',
     iconColor: 'text-emerald-500',
     iconBg: 'bg-emerald-500',
+    accentBorder: 'border-emerald-200 dark:border-emerald-800/40',
   },
 ];
 
@@ -79,17 +84,18 @@ export default function HowItWorks() {
       />
       <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-4xl font-bold text-slate-900 dark:text-white text-center md:text-left">
-          How it works
+          Dead simple. <span className="text-violet-600 dark:text-violet-400">4 steps.</span>{' '}
+          <span className="text-teal-600 dark:text-teal-400">2 hours.</span>
         </h2>
         <p className="mt-2 text-base sm:text-lg text-slate-600 dark:text-slate-300 text-center md:text-left max-w-2xl">
-          Four simple steps to your dream website.
+          No coding. No design skills. No weeks of waiting.
         </p>
         <div className="mt-6 grid gap-10">
           {steps.map((s, idx) => (
             <div key={s.title} className="grid md:grid-cols-2 items-center gap-6 md:gap-10">
               <div className={idx % 2 === 1 ? 'md:order-2' : ''}>
                 <div
-                  className={`rounded-xl border border-slate-200 dark:border-slate-700 bg-gradient-to-tr ${s.color} p-5 shadow-md dark:shadow-black/40 md:min-h-[260px]`}
+                  className={`rounded-xl border ${s.accentBorder} bg-gradient-to-tr ${s.color} p-5 shadow-md dark:shadow-black/40 md:min-h-[260px]`}
                 >
                   <div className="flex items-center gap-3">
                     <span

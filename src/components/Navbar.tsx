@@ -55,9 +55,9 @@ export function Navbar() {
             <ThemeToggle />
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-colors shadow-sm"
+              className="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-violet-600 hover:from-orange-600 hover:to-violet-700 rounded-lg transition-colors shadow-sm"
             >
-              Get Started
+              Try Now
             </a>
           </div>
 
@@ -108,9 +108,9 @@ export function Navbar() {
             <a
               href="#pricing"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-colors shadow-sm"
+              className="inline-flex items-center justify-center h-9 px-5 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-violet-600 hover:from-orange-600 hover:to-violet-700 rounded-lg transition-colors shadow-sm"
             >
-              Get Started
+              Try Now
             </a>
           </div>
         )}
