@@ -1,18 +1,6 @@
-import { Globe, Palette, Wand2, Server } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import Image from 'next/image';
 
-interface Step {
-  title: string;
-  body: string;
-  details: string[];
-  icon: LucideIcon;
-  color: string;
-  iconColor: string;
-  iconBg: string;
-  accentBorder: string;
-}
-
-const steps: Step[] = [
+const steps = [
   {
     title: 'Send us your website',
     body: 'Share your URL. Our AI scraper extracts all your content, pages, and structure — nothing gets lost.',
@@ -21,9 +9,8 @@ const steps: Step[] = [
       'Schema detection identifies your page types',
       'Currently supports English language content',
     ],
-    icon: Globe,
+    img: '/images/foxy_1.png',
     color: 'from-orange-500/10 to-transparent',
-    iconColor: 'text-orange-500',
     iconBg: 'bg-orange-500',
     accentBorder: 'border-orange-200 dark:border-orange-800/40',
   },
@@ -35,9 +22,8 @@ const steps: Step[] = [
       'We extract the design language — layout, typography, colors',
       'Your brand stays yours — we adapt the style, not copy it',
     ],
-    icon: Palette,
+    img: '/images/foxy_2.png',
     color: 'from-violet-500/10 to-transparent',
-    iconColor: 'text-violet-500',
     iconBg: 'bg-violet-500',
     accentBorder: 'border-violet-200 dark:border-violet-800/40',
   },
@@ -49,9 +35,8 @@ const steps: Step[] = [
       'Mobile-responsive and SEO-optimized',
       'Built-in CMS so you can edit content after launch',
     ],
-    icon: Wand2,
+    img: '/images/foxy_3.png',
     color: 'from-teal-500/10 to-transparent',
-    iconColor: 'text-teal-500',
     iconBg: 'bg-teal-500',
     accentBorder: 'border-teal-200 dark:border-teal-800/40',
   },
@@ -63,9 +48,8 @@ const steps: Step[] = [
       'SSL certificate and security handled',
       'Hosting available with monthly plan',
     ],
-    icon: Server,
+    img: '/images/foxy_4.png',
     color: 'from-emerald-500/10 to-transparent',
-    iconColor: 'text-emerald-500',
     iconBg: 'bg-emerald-500',
     accentBorder: 'border-emerald-200 dark:border-emerald-800/40',
   },
@@ -119,12 +103,13 @@ export default function HowItWorks() {
                 </div>
               </div>
               <div className={idx % 2 === 1 ? 'md:order-1' : ''}>
-                <div className="relative mx-auto w-full max-w-[520px] flex items-center justify-center py-8 md:py-12">
-                  <div
-                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${s.color} opacity-50`}
-                    aria-hidden
+                <div className="relative mx-auto aspect-square w-full max-w-[400px]">
+                  <Image
+                    src={s.img}
+                    alt={s.title}
+                    fill
+                    className="object-contain"
                   />
-                  <s.icon className={`relative h-24 w-24 sm:h-32 sm:w-32 ${s.iconColor} opacity-80`} />
                 </div>
               </div>
             </div>
